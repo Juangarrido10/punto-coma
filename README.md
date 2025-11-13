@@ -21,6 +21,7 @@ RF8. Mostrar resumen :Cliente (nombre y teléfono);Ítems con precios aplicados;
 
 2-Reglas del Negocio
 
+<<<<<<< HEAD
 Impresión B/N = Precio Normal $200 -  Precio Volumen	$150	Desde 100 unidades
 Impresión Color = Precio Normal $500 -  Precio Volumen $400	Desde 50 unidades
 Anillado	$3.000	—	No aplica 
@@ -74,26 +75,29 @@ Descuentos:
 Sin descuento si no se cumple ninguno.
 
 Estados del pedido:
+=======
+con descuentos:
+
+10% si el pedido tiene ≥1 anillado y el total de impresiones (B/N + Color) ≥ 30.
+5% si el total bruto > $40.000 (solo si no aplica el 10%).
+Sin descuento si no se cumple ninguno.
+
+los estados del pedido:
+>>>>>>> 4931886e09ba35a4fa9c1754be288d2d69ea60de
 
 EN_CREACION → puede agregar ítems.
-
 CONFIRMADO → no editable.
 
 Validaciones:
-
 Cantidades > 0
-
 Totales no negativos
-
 Pedido confirmado no se puede modificar
 
 Restricciones:
-
 No hay inventario, pagos ni base de datos.
-
 Consola o línea de comandos simple.
 
-3️⃣ Criterios de Aceptación (Given / When / Then)
+3-Criterios de Aceptación 
 
 CA1. Precio por volumen (B/N):
 Dado una impresión B/N x100,
@@ -130,58 +134,79 @@ Dado un pedido válido,
 Cuando pido el resumen,
 Entonces muestra cliente, ítems con precio aplicado, subtotal, descuento y total final.
 
-4️⃣ Diseño (máx. 5 clases)
 
-1. Cliente
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Diseño 
+1-Cliente
 Atributos: nombre, telefono.
 
-2. Producto (enum)
-
+2-Producto (enum)
 Define los tres productos del catálogo con precios normales y por volumen.
 
-3. ItemPedido
-
+3-ItemPedido
 Atributos: producto, cantidad.
-
 Método: subtotal() → determina precio aplicado (normal o por volumen).
 
-4. Pedido
-
+4-Pedido
 Atributos: cliente, items, estado.
-
 Métodos:
-
 agregar_item() (valida estado y cantidad > 0)
-
 calcular_total_bruto()
-
 calcular_descuento() (aplica 10% o 5%)
-
 calcular_total_final()
-
 confirmar()
-
 resumen()
 
-5. PapeleriaService
-
+5-PapeleriaService
 Coordina los casos de uso: crear pedido, agregar ítems, confirmar, mostrar resumen.
 
-5️⃣ Flujo de Consola
-
+-----------------------------
+5-Flujo de Consola
 Ingresar datos del cliente (nombre y teléfono).
-
 Crear pedido nuevo (estado EN_CREACION).
-
 Agregar ítems seleccionando producto y cantidad.
-
 Mostrar detalle del pedido con precios aplicados (normal o volumen) y total bruto.
-
 Calcular descuento aplicable (10%, 5% o ninguno).
-
 Mostrar resumen completo: subtotal, descuento, total final.
-
 Confirmar pedido → cambia a CONFIRMADO.
 
 Intentar editar pedido confirmado → debe fallar.

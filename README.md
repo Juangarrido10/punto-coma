@@ -7,36 +7,28 @@ No se gestiona inventario ni pagos: solo el flujo de crear → calcular → conf
 
 
 analisis del ejercicio
-1-requerimientos funcionales 
+1- Requerimientos funcionales 
+
 RF1. Registrar cliente (nombre, teléfono).
 RF2. Crear pedido en estado EN_CREACION.
-RF3. Agregar ítems al pedido.
-
+RF3. Agregar items al pedido.
 RF4 Calcular total bruto.
-RF6. Aplicar descuentos
-RF7. Confirmar pedido → cambia a estado CONFIRMADO y ya no puede editarse.
+RF5. Aplicar descuentos
+RF6. Confirmar pedido.  cambia a estado CONFIRMADO y ya no puede editarse.
 RF8. Validar que las cantidades sean mayores a 0.
-RF9. Mostrar resumen :Cliente (nombre y teléfono);Ítems con precios aplicados;Subtotal por ítem;Total bruto;Descuento aplicado;Total final
+RF8. Mostrar resumen :Cliente (nombre y teléfono);Ítems con precios aplicados;Subtotal por ítem;Total bruto;Descuento aplicado;Total final
 
 
 2-Reglas del Negocio
-los productos 
-Producto	Precio Normal	Precio Volumen	Condición volumen
-Impresión B/N	$200	$150	Desde 100 unidades
-Impresión Color	$500	$400	Desde 50 unidades
-Anillado	$3.000	—	No aplica
 
-con descuentos:
+Impresión B/N = Precio Normal $200 -  Precio Volumen	$150	Desde 100 unidades
+Impresión Color = Precio Normal $500 -  Precio Volumen $400	Desde 50 unidades
+Anillado	$3.000	—	No aplica 
 
-10% si el pedido tiene ≥1 anillado y el total de impresiones (B/N + Color) ≥ 30.
-
+Descuentos:
+10% si el pedido tiene >= 1 anillado y el total de impresiones (B/N + Color) >= 30.
 5% si el total bruto > $40.000 (solo si no aplica el 10%).
-
 Sin descuento si no se cumple ninguno.
-
-
-
-
 
 
 

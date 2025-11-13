@@ -1,5 +1,5 @@
 package domain;
 
-public class EstadoPedido {
+public enum EstadoPedido {
     
 }

@@ -44,6 +44,7 @@ Restricciones:
 No hay inventario, pagos ni base de datos.
 Consola o línea de comandos simple.
 
+
 3-Criterios de Aceptación 
 
 CA1. Precio por volumen (B/N):
@@ -82,6 +83,7 @@ Cuando pido el resumen,
 Entonces muestra cliente, ítems con precio aplicado, subtotal, descuento y total final.
 
 
+
  Diseño 
 1-Cliente
 Atributos: nombre, telefono.
@@ -106,6 +108,8 @@ resumen()
 5-PapeleriaService
 Coordina los casos de uso: crear pedido, agregar ítems, confirmar, mostrar resumen.
 
+
+
 -----------------------------
 5-Flujo de Consola
 Ingresar datos del cliente (nombre y teléfono).
@@ -116,6 +120,8 @@ Calcular descuento aplicable (10%, 5% o ninguno).
 Mostrar resumen completo: subtotal, descuento, total final.
 Confirmar pedido → cambia a CONFIRMADO.
 
+
+modulacion del proyecto
 Intentar editar pedido confirmado → debe fallar.
 /punto-coma/
 ├─ domain/

@@ -21,7 +21,6 @@ RF8. Mostrar resumen :Cliente (nombre y teléfono);Ítems con precios aplicados;
 
 2-Reglas del Negocio
 
-<<<<<<< HEAD
 Impresión B/N = Precio Normal $200 -  Precio Volumen	$150	Desde 100 unidades
 Impresión Color = Precio Normal $500 -  Precio Volumen $400	Desde 50 unidades
 Anillado	$3.000	—	No aplica 
@@ -31,59 +30,7 @@ Descuentos:
 5% si el total bruto > $40.000 (solo si no aplica el 10%).
 Sin descuento si no se cumple ninguno.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Descuentos:
-
-10% si el pedido tiene ≥1 anillado y el total de impresiones (B/N + Color) ≥ 30.
-
-5% si el total bruto > $40.000 (solo si no aplica el 10%).
-
-Sin descuento si no se cumple ninguno.
-
 Estados del pedido:
-=======
-con descuentos:
-
-10% si el pedido tiene ≥1 anillado y el total de impresiones (B/N + Color) ≥ 30.
-5% si el total bruto > $40.000 (solo si no aplica el 10%).
-Sin descuento si no se cumple ninguno.
-
-los estados del pedido:
->>>>>>> 4931886e09ba35a4fa9c1754be288d2d69ea60de
 
 EN_CREACION → puede agregar ítems.
 CONFIRMADO → no editable.
@@ -133,46 +80,6 @@ CA7. Resumen:
 Dado un pedido válido,
 Cuando pido el resumen,
 Entonces muestra cliente, ítems con precio aplicado, subtotal, descuento y total final.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
  Diseño 

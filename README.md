@@ -44,11 +44,15 @@ No hay inventario, pagos ni base de datos.
 Consola o línea de comandos simple.
 
 
-3-CA1. Precio por volumen (Impresión B/N)
+
+CA1. Precio por volumen (Impresión B/N)
 
 Dado que agrego un ítem de impresión blanco y negro con cantidad de 100 unidades,
 Cuando el sistema calcula el subtotal,
 Entonces debe aplicar el precio unitario por volumen de $150 (y no $200).
+
+ ![image](./assets/CA1)
+
 
 CA2. Precio por volumen (Impresión Color)
 
@@ -56,11 +60,17 @@ Dado que agrego un ítem de impresión color con cantidad de 50 unidades,
 Cuando el sistema calcula el subtotal,
 Entonces debe aplicar el precio unitario por volumen de $400 (y no $500).
 
+ ![image](./assets/CA2)
+
+
 CA3. Descuento del 10% (Anillado + impresiones ≥ 30)
 
 Dado un pedido que incluye al menos un anillado y un total de 30 o más impresiones,
 Cuando el sistema calcula el total final,
 Entonces debe aplicar un 10% de descuento sobre el total bruto.
+
+ ![image](./assets/CA3)
+
 
 CA4. Descuento del 5% (total bruto > 40.000 sin cumplir 10%)
 
@@ -68,11 +78,15 @@ Dado un pedido sin anillado y con un total bruto superior a $40.000,
 Cuando el sistema calcula el total final,
 Entonces debe aplicar un 5% de descuento.
 
+ ![image](./assets/CA4)
+
 CA5. Validación de cantidad
 
 Dado que se intenta agregar un ítem con cantidad igual o menor a 0,
 Cuando se procesa la operación,
 Entonces el sistema debe rechazarla e impedir agregar el ítem.
+
+ ![image](./assets/CA5)
 
 CA6. Bloqueo de edición tras confirmación
 
@@ -80,6 +94,7 @@ Dado un pedido que ya está en estado CONFIRMADO,
 Cuando se intenta agregar o modificar cualquier ítem,
 Entonces el sistema debe rechazar la acción.
 
+ ![image](./assets)
 
 
  Diseño 

@@ -124,6 +124,7 @@ Mostrar resumen completo: subtotal, descuento, total final.
 Confirmar pedido → cambia a CONFIRMADO.
 
 
-Estructura del proyecto
+Estructura del proyecto.
+
 ![image](./assets/estructura.png)
  

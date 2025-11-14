@@ -1,4 +1,12 @@
 
+![image](./assets/image.png)
+
+
+
+
+
+
+
 # Papelería “Punto & Coma”
 
 En Punto & Coma, estudiantes e independientes hacen encargos de impresión y anillado para recoger el mismo día. El sistema registra nombre y teléfono del cliente y permite crear un pedido con ítems de este catálogo: Impresión B/N ($200 c/u, o $150 c/u si son 100 o más), Impresión Color ($500 c/u, o $400 c/u si son 50 o más), y Anillado ($3.000 c/u, sin precio por volumen). El cálculo funciona así: primero determinar subtotales por ítem aplicando precio por volumen cuando corresponda; luego sumar el total bruto; después aplicar un solo beneficio: 
@@ -85,6 +93,10 @@ Entonces muestra cliente, ítems con precio aplicado, subtotal, descuento y tota
 
 
  Diseño 
+
+ ![image](./assets/image.png)
+ descripción: imagen del UML con sus respectivas relaciones
+ 
 1-Cliente
 Atributos: nombre, telefono.
 

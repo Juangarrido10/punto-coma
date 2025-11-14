@@ -44,50 +44,45 @@ No hay inventario, pagos ni base de datos.
 Consola o línea de comandos simple.
 
 
-3-Criterios de Aceptación 
+3-CA1. Precio por volumen (Impresión B/N)
 
-CA1. Precio por volumen (B/N):
-Dado una impresión B/N x100,
-Cuando calculo el subtotal,
-Entonces uso $150 c/u (no $200).
+Dado que agrego un ítem de impresión blanco y negro con cantidad de 100 unidades,
+Cuando el sistema calcula el subtotal,
+Entonces debe aplicar el precio unitario por volumen de $150 (y no $200).
 
-CA2. Precio por volumen (Color):
-Dado una impresión Color x50,
-Cuando calculo el subtotal,
-Entonces uso $400 c/u (no $500).
+CA2. Precio por volumen (Impresión Color)
 
-CA3. Descuento 10% (Anillado + impresiones ≥30):
-Dado un pedido con 1 anillado y 30 impresiones B/N,
-Cuando calculo total final,
-Entonces se aplica 10% de descuento.
+Dado que agrego un ítem de impresión color con cantidad de 50 unidades,
+Cuando el sistema calcula el subtotal,
+Entonces debe aplicar el precio unitario por volumen de $400 (y no $500).
 
-CA4. Descuento 5% (total bruto > 40.000 sin cumplir 10%):
-Dado un pedido sin anillado de total bruto 42.000,
-Cuando calculo total final,
-Entonces se aplica 5% de descuento.
+CA3. Descuento del 10% (Anillado + impresiones ≥ 30)
 
-CA5. Validación de cantidad:
-Dado cantidad 0 o negativa,
-Cuando intento agregar ítem,
-Entonces el sistema rechaza la operación.
+Dado un pedido que incluye al menos un anillado y un total de 30 o más impresiones,
+Cuando el sistema calcula el total final,
+Entonces debe aplicar un 10% de descuento sobre el total bruto.
 
-CA6. Bloqueo de edición:
-Dado un pedido CONFIRMADO,
-Cuando intento agregar o modificar ítems,
-Entonces se rechaza la acción.
+CA4. Descuento del 5% (total bruto > 40.000 sin cumplir 10%)
 
-CA7. Resumen:
-Dado un pedido válido,
-Cuando pido el resumen,
-Entonces muestra cliente, ítems con precio aplicado, subtotal, descuento y total final.
+Dado un pedido sin anillado y con un total bruto superior a $40.000,
+Cuando el sistema calcula el total final,
+Entonces debe aplicar un 5% de descuento.
+
+CA5. Validación de cantidad
+
+Dado que se intenta agregar un ítem con cantidad igual o menor a 0,
+Cuando se procesa la operación,
+Entonces el sistema debe rechazarla e impedir agregar el ítem.
+
+CA6. Bloqueo de edición tras confirmación
+
+Dado un pedido que ya está en estado CONFIRMADO,
+Cuando se intenta agregar o modificar cualquier ítem,
+Entonces el sistema debe rechazar la acción.
 
 
 
  Diseño 
-
- ![image](./assets/image.png)
- descripción: imagen del UML con sus respectivas relaciones
-
 1-Cliente
 Atributos: nombre, telefono.
 
@@ -124,6 +119,21 @@ Mostrar resumen completo: subtotal, descuento, total final.
 Confirmar pedido → cambia a CONFIRMADO.
 
 
-Estructura del proyecto
-![image](./assets/estructura.png)
- 
+modulacion del proyecto
+Intentar editar pedido confirmado → debe fallar.
+/punto-coma/
+├─ domain/
+│  ├─ Cliente.py
+│  ├─ Producto.py
+│  ├─ ItemPedido.py
+│  ├─ Pedido.py
+│  └─ EstadoPedido.py
+├─ service/
+│  └─ PapeleriaService.py
+└─ app/
+   └─ Main.py   # Flujo principal por consola
+
+
+   UML
+   ![alt text](image.png)
+
